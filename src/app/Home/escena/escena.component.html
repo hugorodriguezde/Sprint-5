@@ -1,44 +1,41 @@
 <div class="container">
-  @for (step of steps; track $index){
-  @if($index === currentStep){
+  <div  [@cardChange]="actualStep">
+  <div *ngFor="let step of steps; let i = index">
+    <div *ngIf="i === actualStep">
+      <div>
+        <div [style.background-color]="step.bgcolor" class="card border-0 shadow">
+          <img [src]="step.img" [alt]="step.title" class="align-self-center card-img">
+          <div class="card-body text-black bg-white">
+            <h5 class="card-text">{{step.title}}</h5>
+            <p class="text-secondary">{{step.description}}</p>
 
-  <div class="card-frases">
-    <div [style.background-color]="step.bgcolor" class="card border-0 shadow" style="width: 272px;">
-      <img [src]="step.img" [alt]="step.title" class="align-self-center card-img">
-      <div class="card-body text-black bg-white" style="height: 20rem">
-        <h5 class="card-text">
-          {{step.title}}
-        </h5>
-        <p class="card-text" style="font-size: 0.7rem;">
-          {{step.description}}
-        </p>
+            <div class="dot-buttons d-flex gap-3">
 
-        <div class="card-buttons d-flex gap-3">
-          <!-- bolitas -->
-          <div class="dots-menu">
-            @for(step of steps; track $index){
-            @if($index === currentStep){
-            <button class="stripe btn border-0 m-0 p-0" [class.active]="$index === currentStep"></button>
-            }@else{
-            <button (click)="goToStep($index)" class="dots btn border-0 p-0"></button>
-            }
-            }
-          </div>
-          <!-- arrows -->
-          <div>
-            @if(currentStep !== 0){
-            <button (click)="last()" class="btn btn-warning btn-outline-dark bg-white rounded-circle"><img
-                src="assets/img/leftArrow.svg" alt="arrow"></button>
-            }
-            @if(currentStep !== 2){
-            <button (click)="next()" class="btn btn-info btn-outline-dark bg-dark rounded-circle"><img
-                src="assets/img/rightArrow.svg" class="invert" alt="arrow"></button>
-            }
+              <div class="dots-menu">
+                <ng-container *ngFor="let step of steps; let i = index">
+                  <button *ngIf="i === actualStep; else elseBlock"
+                          class="stripe btn border-0 m-0 p-0" [class.active]="i === actualStep">
+                  </button>
+
+                  <ng-template #elseBlock>
+                    <button (click)="goToStep(i)" class="dots btn border-0 p-0"></button>
+                  </ng-template>
+                </ng-container>
+              </div>
+
+              <div>
+                <button *ngIf="actualStep !== 0" (click)="last()" class="btn btn-warning btn-outline-dark bg-white rounded-circle p-2">
+                  <img src="assets/img/leftArrow.svg" alt="arrow">
+                </button>
+
+                <button *ngIf="actualStep !== 2" (click)="next();" class="btn btn-info btn-outline-dark bg-dark rounded-circle p-2">
+                  <img src="assets/img/rightArrow.svg" class="invert" alt="arrow">
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
-  }
-  }
+  </div>
 </div>

@@ -1,13 +1,20 @@
+
 .card {
-  margin-top: 3rem;
+  margin-top: 10em;
   border-radius: 25px;
+  width: 300px;
 }
 
 .card-body {
   border-radius: 0 0 25px 25px;
+  height: 20rem;
 }
 
-.card-buttons {
+.card-text{
+  font-size: 1rem;
+}
+
+.dot-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,4 +61,10 @@
   width: 100%;
   max-height: 190px;
   height: 190px;
+}
+
+button
+{
+  margin-left:5px;
+  margin-right:5px;
 }
