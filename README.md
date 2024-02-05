@@ -1,19 +1,17 @@
-# OnBoarding
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
+#  📚IT Academy Barcelona Activa - Sprint 5 - onBoarding 📚
 
-## Development server
+## 💻  Como compilar el proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clona este repositorio con `git clone https://github.com/hugorodriguezde/Sprint-5.git`.
+2. Dentro del directorio donde se ha clonado el repositorio ejecuta `npm install` en el terminal para instalar todas las dependencias.
+3. Dentro del directorio ejecuta el comando `ng serve` en el terminal.
+4. Navega a `http://localhost:4200/` para visualizar el proyecto .
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🛠️ Tecnologías utilizadas
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular (Version 17.0.9)
+- TypeScript
+- HTML/SCSS
+- Bootstrap
